@@ -22,7 +22,7 @@ if (args.Length == 0)
 
     if (useOtherDate)
     {
-        Console.WriteLine("Min Day: 1 | Min month: 1 | Min year: 2015 | Seperate by .");
+        Console.WriteLine("Min Date: 01.01.2015 | Seperate by '.'");
         Console.Write("DD.MM.YYYY: ");
         string[] date = Console.ReadLine().Trim().Split('.');
         day = int.Parse(date[0]);
@@ -89,7 +89,6 @@ foreach (var htmlNode in nodes)
     
     if (htmlNode.Name == "#text" && htmlNode.InnerText.Trim() == searchPattern.Trim())
     {
-        Console.WriteLine("Found it!");
         var urlHtml = htmlNode.NextSibling.Attributes.FirstOrDefault(x => x.Name == "href").Value;
         DownloadImage("https://apod.nasa.gov/apod/" + urlHtml);
         break;
